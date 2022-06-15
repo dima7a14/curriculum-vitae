@@ -13,7 +13,7 @@ function CVApp({ Component, pageProps }) {
 }
 
 CVApp.propTypes = {
-	Component: PropTypes.element.isRequired,
+	Component: PropTypes.func.isRequired,
 	pageProps: PropTypes.object.isRequired,
 };
 

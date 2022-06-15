@@ -18,6 +18,11 @@
         "ecmaVersion": "latest",
         "sourceType": "module"
     },
+	"ignorePatterns": [
+		"next.config.js",
+		"postcss.config.js",
+		"tailwind.config.js"
+	],
     "plugins": [
         "react",
         "prettier",

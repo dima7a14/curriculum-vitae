@@ -42,10 +42,10 @@ function Header() {
 									<NextLink key={item.href} href={item.href}>
 										<a
 											className={clsx(
-												'text-gray-300 hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium',
-												item.href ===
-													selectedItem?.href &&
-													'text-gray-800 dark:text-white'
+												'hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium',
+												item.href === selectedItem?.href
+													? 'text-gray-800 dark:text-white'
+													: 'text-gray-300'
 											)}
 										>
 											{item.label}

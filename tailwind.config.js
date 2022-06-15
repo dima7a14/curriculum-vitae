@@ -12,9 +12,18 @@ module.exports = {
 						opacity: 0,
 					},
 				},
+				gradient: {
+					'0%, 100%': {
+						backgroundPosition: '0% 50%',
+					},
+					'50%': {
+						backgroundPosition: '100% 50%',
+					},
+				},
 			},
 			animation: {
 				blink: 'blink 1s ease-in-out infinite',
+				gradient: 'gradient 15s ease-in-out infinite',
 			},
 		},
 	},
