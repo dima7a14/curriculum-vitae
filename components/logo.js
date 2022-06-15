@@ -1,25 +1,14 @@
-import { Button } from 'antd';
-
-import links from '../consts/links';
+import React from 'react';
+import NextLink from 'next/link';
+import { FiCoffee } from 'react-icons/fi';
 
 function Logo() {
-	const link = links[1];
-
 	return (
-		<Button
-			size="large"
-			href={link.link}
-			target="_blank"
-			style={{
-				width: 64,
-				lineHeight: '64px',
-				height: 64,
-				paddingTop: 0,
-				padding: 0,
-			}}
-		>
-			{<link.cmp style={{ fontSize: 36, verticalAlign: 'middle' }} />}
-		</Button>
+		<NextLink href="/">
+			<a className="drop-shadow-2xl px-2 py-2 text-5xl text-gray-800 dark:text-white">
+				<FiCoffee />
+			</a>
+		</NextLink>
 	);
 }
 

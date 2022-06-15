@@ -1,3 +1,5 @@
+import React from 'react';
+import PropTypes from 'prop-types';
 import NextHead from 'next/head';
 
 function Head({ title = 'Curriculum Vitae' }) {
@@ -7,5 +9,9 @@ function Head({ title = 'Curriculum Vitae' }) {
 		</NextHead>
 	);
 }
+
+Head.propTypes = {
+	title: PropTypes.string,
+};
 
 export default Head;

@@ -6,9 +6,10 @@
     },
     "extends": [
         "eslint:recommended",
-        "airbnb",
+		"airbnb-base",
         "plugin:react/recommended",
-        "prettier"
+        "prettier",
+		"plugin:jsx-a11y/strict"
     ],
     "parserOptions": {
         "ecmaFeatures": {
@@ -19,7 +20,8 @@
     },
     "plugins": [
         "react",
-        "prettier"
+        "prettier",
+		"jsx-a11y"
     ],
     "rules": {
       "prettier/prettier": ["error"]

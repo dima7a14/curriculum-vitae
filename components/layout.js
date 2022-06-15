@@ -1,17 +1,21 @@
-import { Layout as AntdLayout } from 'antd';
+import React from 'react';
+import PropTypes from 'prop-types';
 
-import Header from '../components/header';
-
-const { Footer, Content } = AntdLayout;
+import Header from './header';
 
 function Layout({ children }) {
 	return (
-		<AntdLayout>
+		<div className="h-screen bg-gray-200 dark:bg-black overflow-hidden">
 			<Header />
-			<Content>{children}</Content>
-			<Footer>&copy; 2022</Footer>
-		</AntdLayout>
+			<div className="max-w-7xl h-full overflow-auto mx-auto p-8">
+				{children}
+			</div>
+		</div>
 	);
 }
+
+Layout.propTypes = {
+	children: PropTypes.node,
+};
 
 export default Layout;

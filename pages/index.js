@@ -1,6 +1,8 @@
+import React from 'react';
+
 import Head from '../components/head';
 
-export default function HomePage() {
+function HomePage() {
 	return (
 		<>
 			<Head />
@@ -8,3 +10,5 @@ export default function HomePage() {
 		</>
 	);
 }
+
+export default HomePage;
