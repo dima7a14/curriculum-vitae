@@ -22,7 +22,7 @@ function LinkTo({
 }
 
 LinkTo.propTypes = {
-	children: PropTypes.element.isRequired,
+	children: PropTypes.node.isRequired,
 	href: PropTypes.string.isRequired,
 	as: PropTypes.string,
 	replace: PropTypes.bool,
