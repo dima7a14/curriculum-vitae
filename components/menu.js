@@ -31,7 +31,7 @@ function Menu() {
 	return (
 		<Popover>
 			<div className="md:hidden">
-				<Popover.Button className="bg-white text-gray-800 p-2">
+				<Popover.Button className="bg-white dark:bg-gray-800 dark:border-2 dark:border-white rounded text-gray-800 dark:text-white p-2">
 					<FaBars className="w-6 h-6" aria-hidden="true" />
 				</Popover.Button>
 			</div>
@@ -64,10 +64,10 @@ function Menu() {
 					focus
 					className="absolute top-0 z-10 inset-x-0 p-2 transition transform origin-top-right md:hidden"
 				>
-					<div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50">
-						<div className="pt-5 pb-6 px-5">
+					<div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white dark:bg-gray-800 divide-y-2 divide-gray-50">
+						<div className="p-4">
 							<div className="flex items-center justify-end">
-								<Popover.Button className="bg-white text-gray-800 p-2">
+								<Popover.Button className="bg-white dark:bg-gray-800 text-gray-800 dark:text-white p-2">
 									<FaTimes
 										className="w-6 h-6"
 										aria-hidden="true"
@@ -80,7 +80,7 @@ function Menu() {
 										<LinkTo
 											href={item.href}
 											className={clsx(
-												'text-base font-medium hover:text-gray-500',
+												'text-base font-medium hover:text-gray-500 dark:text-white',
 												item.href === selectedItem?.href
 													? 'text-gray-800'
 													: 'text-gray-500'

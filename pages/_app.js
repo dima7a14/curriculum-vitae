@@ -7,7 +7,7 @@ import '../styles/globals.css';
 function CVApp({ Component, pageProps }) {
 	return (
 		<Layout>
-			<Component pageProps={pageProps} />
+			<Component {...pageProps} />
 		</Layout>
 	);
 }
