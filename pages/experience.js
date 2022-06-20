@@ -6,6 +6,7 @@ import clsx from 'clsx';
 import experience from '../consts/experience';
 
 import Head from '../components/head';
+import Chip from '../components/chip';
 
 const availableColors = [
 	{
@@ -131,6 +132,16 @@ function Experience({ items, colors }) {
 											{pr.description}
 										</p>
 									)}
+									<div className="flex flex-wrap justify-start items-center">
+										{pr.technologies.map((tech) => (
+											<Chip
+												key={tech}
+												className="mr-2 mb-2"
+											>
+												{tech}
+											</Chip>
+										))}
+									</div>
 									<h3 className="font-normal text-gray-800 dark:text-white text-lg md:text-xl mb-2">
 										Responsibilities:
 									</h3>
