@@ -30,13 +30,21 @@ function HomePage() {
 					>
 						About me
 					</LinkTo>
-					<Button
-						variant="secondary"
-						className="flex flex-row space-x-2 justify-center items-center"
+					<LinkTo
+						href="/cv.pdf"
+						target="_blank"
+						component={(btnProps) => (
+							<Button
+								variant="secondary"
+								type="link"
+								className="flex flex-row space-x-2 justify-center items-center"
+								{...btnProps}
+							/>
+						)}
 					>
 						<FaDownload />
 						<span>Download</span>
-					</Button>
+					</LinkTo>
 				</div>
 			</div>
 		</section>
