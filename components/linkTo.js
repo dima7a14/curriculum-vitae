@@ -12,10 +12,43 @@ function LinkTo({
 	prefetch,
 	locale,
 	passHref,
+	component: Component,
 	...anchorProps
 }) {
+	if (Component) {
+		return (
+			<Link
+				{...{
+					href,
+					as,
+					replace,
+					scroll,
+					shallow,
+					prefetch,
+					locale,
+					passHref,
+				}}
+			>
+				<Component {...anchorProps} href={href}>
+					{children}
+				</Component>
+			</Link>
+		);
+	}
+
 	return (
-		<Link {...{ href, as, replace, scroll, shallow, prefetch, locale }}>
+		<Link
+			{...{
+				href,
+				as,
+				replace,
+				scroll,
+				shallow,
+				prefetch,
+				locale,
+				passHref,
+			}}
+		>
 			<a {...anchorProps}>{children}</a>
 		</Link>
 	);
@@ -31,6 +64,7 @@ LinkTo.propTypes = {
 	passHref: PropTypes.bool,
 	locale: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
 	prefetch: PropTypes.bool,
+	component: PropTypes.func,
 };
 
 export default LinkTo;

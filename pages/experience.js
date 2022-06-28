@@ -56,7 +56,7 @@ function getRandomColor(originColors) {
 
 function Experience({ items, colors }) {
 	return (
-		<>
+		<section className="relative w-full px-6 py-12 bg-white dark:bg-gray-800 shadow-xl shadow-slate-700/10 ring-1 ring-gray-900/5 md:max-w-3xl md:mx-auto lg:max-w-4xl pt-4 sm:pt-6 lg:pt-8 lg:pb-12 rounded-lg">
 			<Head title="My experience" />
 			<h1 className="text-center text-gray-800 dark:text-white text-2xl md:text-4xl font-light mb-4">
 				Experience
@@ -158,7 +158,7 @@ function Experience({ items, colors }) {
 					);
 				})}
 			</ol>
-		</>
+		</section>
 	);
 }
 

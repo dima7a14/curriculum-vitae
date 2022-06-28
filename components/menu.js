@@ -4,28 +4,15 @@ import clsx from 'clsx';
 import { Popover, Transition } from '@headlessui/react';
 import { FaBars, FaTimes } from 'react-icons/fa';
 
+import routes from '../consts/routes';
 import LinkTo from './linkTo';
 
-const items = [
-	{
-		label: 'About',
-		href: '/about',
-	},
-	{
-		label: 'Experience',
-		href: '/experience',
-	},
-	{
-		label: 'Pet Projects',
-		href: '/pets',
-	},
-];
-
 function Menu() {
+	const items = useMemo(() => Object.values(routes), [routes]);
 	const router = useRouter();
 	const selectedItem = useMemo(
 		() => items.find((i) => i.href === router.pathname),
-		[items, router.pathname]
+		[routes, router.pathname]
 	);
 
 	return (

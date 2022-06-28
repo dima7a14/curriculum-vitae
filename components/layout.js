@@ -15,9 +15,7 @@ function Layout({ children }) {
 		>
 			<Header />
 			<div className="max-w-full h-full overflow-auto mx-auto p-8">
-				<section className="relative w-full px-6 py-12 bg-white dark:bg-gray-800 shadow-xl shadow-slate-700/10 ring-1 ring-gray-900/5 md:max-w-3xl md:mx-auto lg:max-w-4xl pt-4 sm:pt-6 lg:pt-8 lg:pb-12 rounded-lg">
-					{children}
-				</section>
+				{children}
 			</div>
 		</div>
 	);
