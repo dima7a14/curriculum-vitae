@@ -2,6 +2,7 @@ import React from 'react';
 
 import Logo from './logo';
 import Menu from './menu';
+import ThemeSwitcher from './themeSwitcher';
 
 function Header() {
 	return (
@@ -13,6 +14,7 @@ function Header() {
 						<div className="flex-1 ml-4 text-gray-800 dark:text-white font-semibold">
 							Dima Danyliuk
 						</div>
+						<ThemeSwitcher />
 						<Menu />
 					</div>
 				</div>

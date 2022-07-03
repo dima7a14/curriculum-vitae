@@ -5,10 +5,14 @@ import { Popover, Transition } from '@headlessui/react';
 import { FaBars, FaTimes } from 'react-icons/fa';
 
 import routes from '../consts/routes';
+import Button from './button';
 import LinkTo from './linkTo';
 
 function Menu() {
-	const items = useMemo(() => Object.values(routes), [routes]);
+	const items = useMemo(
+		() => Object.values(routes).filter((route) => route.enabled),
+		[routes]
+	);
 	const router = useRouter();
 	const selectedItem = useMemo(
 		() => items.find((i) => i.href === router.pathname),
@@ -18,7 +22,7 @@ function Menu() {
 	return (
 		<Popover>
 			<div className="md:hidden">
-				<Popover.Button className="bg-white dark:bg-gray-800 dark:border-2 dark:border-white rounded text-gray-800 dark:text-white p-2">
+				<Popover.Button as={Button} className="text-lg md:text-xl px-2">
 					<FaBars className="w-6 h-6" aria-hidden="true" />
 				</Popover.Button>
 			</div>
@@ -49,35 +53,39 @@ function Menu() {
 			>
 				<Popover.Panel
 					focus
-					className="absolute top-0 z-10 inset-x-0 p-2 transition transform origin-top-right md:hidden"
+					className="absolute top-16 z-10 inset-x-0 transition transform origin-top-right md:hidden"
 				>
-					<div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white dark:bg-gray-800 divide-y-2 divide-gray-50">
-						<div className="p-4">
+					<div className="rounded-b-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white dark:bg-gray-800">
+						<div className="p-2">
 							<div className="flex items-center justify-end">
-								<Popover.Button className="bg-white dark:bg-gray-800 text-gray-800 dark:text-white p-2">
+								<Popover.Button as={Button} className="px-2">
 									<FaTimes
 										className="w-6 h-6"
 										aria-hidden="true"
 									/>
 								</Popover.Button>
 							</div>
-							<div className="mt-2">
+							<div className="mt-2 flex flex-col">
 								{items.map((item) => (
-									<div key={item.href} className="py-4 px-5">
-										<LinkTo
-											href={item.href}
-											className={clsx(
-												'text-base font-medium hover:text-gray-500 dark:text-white',
-												item.href === selectedItem?.href
-													? 'text-gray-800'
-													: 'text-gray-500'
-											)}
-										>
-											<Popover.Button>
-												{item.label}
-											</Popover.Button>
-										</LinkTo>
-									</div>
+									<LinkTo
+										key={item.href}
+										href={item.href}
+										className={clsx(
+											'hover:text-gray-500 dark:text-white mt-2',
+											item.href === selectedItem?.href
+												? 'text-gray-800 '
+												: 'text-gray-500 '
+										)}
+										component={(cmpProps) => (
+											<Popover.Button
+												as={Button}
+												type="link"
+												{...cmpProps}
+											/>
+										)}
+									>
+										{item.label}
+									</LinkTo>
 								))}
 							</div>
 						</div>

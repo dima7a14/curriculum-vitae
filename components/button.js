@@ -1,5 +1,5 @@
-import React from 'react';
-import PropTypes, { string } from 'prop-types';
+import React, { forwardRef } from 'react';
+import PropTypes from 'prop-types';
 import clsx from 'clsx';
 
 function getButtonColors(variant) {
@@ -46,50 +46,59 @@ function getButtonColors(variant) {
 	return buttonColors;
 }
 
-function Button({
-	children,
-	type,
-	className,
-	variant,
-	onClick,
-	onKeyPress,
-	href,
-	...other
-}) {
-	const buttonColors = getButtonColors(variant);
-	const btnClassName = clsx(
-		'font-semibold text-center text-lg md:text-xl py-2 px-4 shadow rounded transition duration-200 ease text-gray-800 dark:text-white no-underline',
-		buttonColors,
-		className
-	);
+const Button = forwardRef(
+	(
+		{
+			children,
+			type,
+			className,
+			variant,
+			onClick,
+			onKeyPress,
+			href,
+			...other
+		},
+		ref
+	) => {
+		const buttonColors = getButtonColors(variant);
+		const btnClassName = clsx(
+			'font-semibold text-center text-lg md:text-xl py-2 px-4 shadow rounded-lg transition duration-200 ease text-gray-800 dark:text-white no-underline',
+			buttonColors,
+			className
+		);
 
-	if (type === 'link') {
+		if (type === 'link') {
+			return (
+				<a
+					ref={ref}
+					className={btnClassName}
+					onClick={onClick}
+					onKeyPress={onKeyPress}
+					role="button"
+					tabIndex="0"
+					href={href}
+					{...other}
+				>
+					{children}
+				</a>
+			);
+		}
+
 		return (
-			<a
+			<button
+				ref={ref}
+				type={type}
 				className={btnClassName}
 				onClick={onClick}
 				onKeyPress={onKeyPress}
-				role="button"
-				tabIndex="0"
-				href={href}
-				{...other}
 			>
 				{children}
-			</a>
+			</button>
 		);
 	}
+);
 
-	return (
-		<button
-			type={type}
-			className={btnClassName}
-			onClick={onClick}
-			onKeyPress={onKeyPress}
-		>
-			{children}
-		</button>
-	);
-}
+Button.displayName = 'Button';
 
 Button.propTypes = {
 	children: PropTypes.node.isRequired,
@@ -102,6 +111,7 @@ Button.propTypes = {
 		'warning',
 		'danger',
 		'info',
+		'default',
 	]),
 	onClick: PropTypes.func,
 	onKeyPress: PropTypes.func,

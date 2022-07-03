@@ -70,7 +70,7 @@ function Experience({ items, colors }) {
 
 					return (
 						<li
-							key={exp.company}
+							key={exp.company ?? exp.companyLink}
 							className={clsx(
 								'border-l-2 pl-0.5 py-3',
 								colors[colorIndex].border
@@ -110,7 +110,10 @@ function Experience({ items, colors }) {
 								</h3>
 							</div>
 							{exp.projects.map((pr) => (
-								<div key={pr.name} className="mt-0.5 ml-5">
+								<div
+									key={pr.name ?? pr.link ?? exp.name}
+									className="mt-0.5 ml-5"
+								>
 									<h3 className="text-gray-800 dark:text-white font-semibold text-lg md:text-2xl my-2 md:my-4">
 										{pr.name}
 										{pr.link && (

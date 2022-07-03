@@ -1,23 +1,49 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import Link from 'next/link';
 import PropTypes from 'prop-types';
 
-function LinkTo({
-	children,
-	href,
-	as,
-	replace,
-	scroll,
-	shallow,
-	prefetch,
-	locale,
-	passHref,
-	component: Component,
-	...anchorProps
-}) {
-	if (Component) {
+const LinkTo = forwardRef(
+	(
+		{
+			children,
+			href,
+			as,
+			replace,
+			scroll,
+			shallow,
+			prefetch,
+			locale,
+			passHref,
+			component: Component,
+			...anchorProps
+		},
+		ref
+	) => {
+		if (Component) {
+			return (
+				<Link
+					ref={ref}
+					{...{
+						href,
+						as,
+						replace,
+						scroll,
+						shallow,
+						prefetch,
+						locale,
+						passHref,
+					}}
+				>
+					<Component {...anchorProps} href={href}>
+						{children}
+					</Component>
+				</Link>
+			);
+		}
+
 		return (
 			<Link
+				ref={ref}
 				{...{
 					href,
 					as,
@@ -29,30 +55,13 @@ function LinkTo({
 					passHref,
 				}}
 			>
-				<Component {...anchorProps} href={href}>
-					{children}
-				</Component>
+				<a {...anchorProps}>{children}</a>
 			</Link>
 		);
 	}
+);
 
-	return (
-		<Link
-			{...{
-				href,
-				as,
-				replace,
-				scroll,
-				shallow,
-				prefetch,
-				locale,
-				passHref,
-			}}
-		>
-			<a {...anchorProps}>{children}</a>
-		</Link>
-	);
-}
+LinkTo.displayName = 'LinkTo';
 
 LinkTo.propTypes = {
 	children: PropTypes.node.isRequired,

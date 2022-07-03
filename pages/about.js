@@ -36,6 +36,9 @@ function About() {
 				<h1 className="font-light text-3xl md:text-6xl text-center md:text-left">
 					Dima Danyliuk
 				</h1>
+				<h4 className="font-semibold text-xl md:text-2xl border-b border-b-gray-800 inline-block mt-0 mb-4">
+					Bio
+				</h4>
 				<p>
 					I am a developer based in Ukraine 🇺🇦 with a passion for
 					learning new things, reading different books, and playing
