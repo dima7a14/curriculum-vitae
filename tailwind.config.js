@@ -23,7 +23,7 @@ module.exports = {
 			},
 			animation: {
 				blink: 'blink 1s ease-in-out infinite',
-				gradient: 'gradient 15s ease-in-out infinite',
+				gradient: 'gradient 5s ease-in-out infinite',
 			},
 		},
 	},
