@@ -4,9 +4,10 @@ import { FaExternalLinkAlt } from 'react-icons/fa';
 import clsx from 'clsx';
 
 import experience from '../consts/experience';
+import technologies from '../consts/technologies';
 
 import Head from '../components/head';
-import Chip from '../components/chip';
+import Technology from '../components/technology';
 
 const availableColors = [
 	{
@@ -137,12 +138,13 @@ function Experience({ items, colors }) {
 									)}
 									<div className="flex flex-wrap justify-start items-center">
 										{pr.technologies.map((tech) => (
-											<Chip
+											<Technology
 												key={tech}
 												className="mr-2 mb-2"
-											>
-												{tech}
-											</Chip>
+												name={technologies[tech].name}
+												Icon={technologies[tech].Icon}
+												level={technologies[tech].level}
+											/>
 										))}
 									</div>
 									<h3 className="font-normal text-gray-800 dark:text-white text-lg md:text-xl mb-2">

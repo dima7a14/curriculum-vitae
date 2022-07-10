@@ -1,15 +1,32 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import Image from 'next/image';
 import clsx from 'clsx';
 
 import links from '../consts/links';
+import technologiesMap from '../consts/technologies';
+import getLevelColors from '../utils/getLevelColors';
 
 import Head from '../components/head';
+import Technology from '../components/technology';
 
 import profilePic from '../public/profile.jpg';
 import styles from '../styles/about.module.css';
 
 function About() {
+	const languages = useMemo(
+		() => [
+			technologiesMap.js,
+			technologiesMap.ts,
+			technologiesMap.python,
+			technologiesMap.dart,
+		],
+		[]
+	);
+	const technologies = useMemo(
+		() => Object.values(technologiesMap).filter((t) => !t.language),
+		[]
+	);
+
 	return (
 		<section className="relative w-full px-6 py-12 bg-white dark:bg-gray-800 shadow-xl shadow-slate-700/10 ring-1 ring-gray-900/5 md:max-w-3xl md:mx-auto lg:max-w-4xl pt-4 sm:pt-6 lg:pt-8 lg:pb-12 rounded-lg">
 			<Head title="About me">
@@ -36,7 +53,7 @@ function About() {
 				<h1 className="font-light text-3xl md:text-6xl text-center md:text-left">
 					Dima Danyliuk
 				</h1>
-				<h4 className="font-semibold text-xl md:text-2xl border-b border-b-gray-800 inline-block mt-0 mb-4">
+				<h4 className="font-semibold text-xl md:text-2xl border-b border-b-gray-800 inline-block my-0">
 					Bio
 				</h4>
 				<p>
@@ -49,7 +66,43 @@ function About() {
 					build my custom robot)
 				</p>
 				<p>Feel free to contact me if you have any questions.</p>
-				<div className="flex flex-row flex-wrap justify-between items-center px-4 lg:px-16">
+				<h4 className="font-semibold text-xl md:text-2xl border-b border-b-gray-800 inline-block mt-0 mb-4">
+					Programming languages
+				</h4>
+				<ul className="text-xl md:text-2xl list-none pl-0">
+					{languages.map(({ name, experience, level, Icon }) => (
+						<li
+							key={name}
+							className={clsx(
+								'flex flex-row space-x-2 md:space-x-4 items-center',
+								getLevelColors(level).text
+							)}
+						>
+							<Icon className="rounded" />
+							<span>
+								{name} ({experience})
+							</span>
+						</li>
+					))}
+				</ul>
+				<h4 className="font-semibold text-xl md:text-2xl border-b border-b-gray-800 inline-block mt-0 mb-4">
+					Technologies &amp; Tools
+				</h4>
+				<div className="flex flex-row flex-wrap items-center">
+					{technologies.map(({ name, level, Icon }) => (
+						<Technology
+							key={name}
+							name={name}
+							Icon={Icon}
+							level={level}
+							className="mb-2 mr-2"
+						/>
+					))}
+				</div>
+				<h4 className="font-semibold text-xl md:text-2xl border-b border-b-gray-800 inline-block mt-0 mb-4">
+					Links
+				</h4>
+				<div className="flex flex-col flex-wrap justify-between items-start space-y-2 md:space-y-4">
 					{links.map(({ Icon, link, label }) => (
 						<a
 							key={link}
@@ -57,8 +110,10 @@ function About() {
 							target="_blank"
 							rel="noreferrer"
 							title={label}
+							className="flex flex-row justify-start items-center space-x-2 no-underline hover:text-sky-600 dark:hover:text-purple-500 transition duration-200 ease font-light text-xl md:text-2xl"
 						>
-							<Icon className="text-black dark:text-white hover:text-sky-600 dark:hover:text-purple-500 w-8 sm:w-12 md:w-16 h-8 sm:h-12 md:h-16" />
+							<Icon className="w-6 sm:w-8 md:w-10 h-6 sm:h-8 md:h-10" />
+							<span>{label}</span>
 						</a>
 					))}
 				</div>
