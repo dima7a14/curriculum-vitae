@@ -4,10 +4,9 @@ import clsx from 'clsx';
 
 import links from '../consts/links';
 import technologiesMap from '../consts/technologies';
-import getLevelColors from '../utils/getLevelColors';
 
 import Head from '../components/head';
-import Technology from '../components/technology';
+import Technology, { getLevelColors } from '../components/technology';
 
 import profilePic from '../public/profile.jpg';
 import styles from '../styles/about.module.css';
