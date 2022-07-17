@@ -86,7 +86,7 @@ function About() {
 				viewport={{ once: true }}
 				className="text-center"
 			>
-				<div className="bg-black dark:bg-white bg-opacity-90 border-2 border-gray-200 dark:border-black rounded-lg px-4 py-2 shadow-xl shadow-slate-700/10 ring-1 ring-gray-900/5 font-semibold italic text-green-500 mx-auto text-sm sm:text-lg md:text-xl lg:text-2xl mb-2 md:mb-6 inline-block">
+				<div className="bg-black bg-opacity-90 border-2 border-gray-200 rounded-lg px-4 py-2 shadow-xl shadow-slate-700/10 ring-1 ring-gray-900/5 font-semibold italic text-green-500 mx-auto text-sm sm:text-lg md:text-xl lg:text-2xl mb-2 md:mb-6 inline-block">
 					Hello! I am a front-end developer and this is my Curriculum
 					Vitae
 					<span
@@ -102,13 +102,13 @@ function About() {
 			<article className="prose dark:prose-invert prose-2xl w-full prose-p:my-4 md:prose-p:my-8 prose-p:text-lg sm:prose-p:text-2xl">
 				<motion.div
 					variants={contentAnimation}
-					className="w-32 sm:w-48 md:w-64 h-32 sm:h-48 md:h-64 mx-auto md:ml-4 md:float-right rounded-full border-4 md:border-8 border-sky-200 dark:border-purple-300 shadow-lg overflow-hidden"
+					className="w-48 h-48 mx-auto md:ml-4 sm:float-right rounded-full border-4 md:border-4 border-sky-200 dark:border-purple-300 shadow-lg overflow-hidden"
 				>
-					<Image src={profilePic} width={256} height={256} />
+					<Image src={profilePic} width={192} height={192} />
 				</motion.div>
 				<motion.h1
 					variants={contentAnimation}
-					className="font-light text-3xl md:text-6xl text-center md:text-left"
+					className="font-light text-3xl sm:text-5xl md:text-6xl text-center sm:text-left mb-8"
 				>
 					Dima Danyliuk
 				</motion.h1>
@@ -132,7 +132,7 @@ function About() {
 				</motion.p>
 				<motion.h4
 					variants={contentAnimation}
-					className="font-semibold text-xl md:text-2xl border-b border-b-gray-800 inline-block mt-0 mb-4"
+					className="font-semibold text-xl md:text-2xl border-b border-b-gray-800 inline-block mt-0 mb-8"
 				>
 					Programming languages
 				</motion.h4>
@@ -142,7 +142,7 @@ function About() {
 							key={name}
 							variants={contentAnimation}
 							className={clsx(
-								'flex flex-row space-x-2 md:space-x-4 items-center',
+								'flex flex-row space-x-2 md:space-x-4 items-center mt-0',
 								getLevelColors(level).text
 							)}
 						>
@@ -158,7 +158,7 @@ function About() {
 					initial="hidden"
 					whileInView="visible"
 					viewport={{ once: true }}
-					className="font-semibold text-xl md:text-2xl border-b border-b-gray-800 inline-block mt-0 mb-4"
+					className="font-semibold text-xl md:text-2xl border-b border-b-gray-800 inline-block my-8"
 				>
 					Technologies &amp; Tools
 				</motion.h4>
@@ -185,7 +185,7 @@ function About() {
 					initial="hidden"
 					whileInView="visible"
 					viewport={{ once: true }}
-					className="font-semibold text-xl md:text-2xl border-b border-b-gray-800 inline-block mt-0 mb-4"
+					className="font-semibold text-xl md:text-2xl border-b border-b-gray-800 inline-block my-8"
 				>
 					Links
 				</motion.h4>
