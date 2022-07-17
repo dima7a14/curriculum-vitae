@@ -17,7 +17,7 @@ function ExperienceItem({
 	role,
 	projects,
 }) {
-	const container = useMemo(
+	const containerAnimation = useMemo(
 		() => ({
 			hidden: { opacity: 0 },
 			visible: {
@@ -29,7 +29,7 @@ function ExperienceItem({
 		}),
 		[]
 	);
-	const techContainer = useMemo(
+	const techAnimation = useMemo(
 		() => ({
 			hidden: { opacity: 1, scale: 0 },
 			visible: {
@@ -43,7 +43,7 @@ function ExperienceItem({
 		}),
 		[]
 	);
-	const block = useMemo(
+	const contentAnimation = useMemo(
 		() => ({
 			hidden: {
 				opacity: 0,
@@ -59,14 +59,14 @@ function ExperienceItem({
 
 	return (
 		<motion.li
-			variants={container}
+			variants={containerAnimation}
 			initial="hidden"
 			whileInView="visible"
 			viewport={{ once: true }}
 			className={clsx('border-l-2 pl-0.5 py-3', color.border)}
 		>
 			<motion.div
-				variants={block}
+				variants={contentAnimation}
 				className="flex flex-start items-center"
 			>
 				<div
@@ -81,7 +81,7 @@ function ExperienceItem({
 			</motion.div>
 			<div className="mt-0.5 ml-5">
 				<motion.h2
-					variants={block}
+					variants={contentAnimation}
 					className="text-gray-800 dark:text-white font-semibold text-xl md:text-3xl mb-1"
 				>
 					{company}
@@ -100,7 +100,7 @@ function ExperienceItem({
 					)}
 				</motion.h2>
 				<motion.h3
-					variants={block}
+					variants={contentAnimation}
 					className="text-gray-800 dark:text-white font-light text-md md:text-lg mb-1 md:mb-3"
 				>
 					Role: <span className="italic">{role}</span>
@@ -112,7 +112,7 @@ function ExperienceItem({
 					className="mt-0.5 ml-5"
 				>
 					<motion.h3
-						variants={block}
+						variants={contentAnimation}
 						className="text-gray-800 dark:text-white font-semibold text-lg md:text-2xl my-2 md:my-4"
 					>
 						{pr.name}
@@ -132,18 +132,18 @@ function ExperienceItem({
 					</motion.h3>
 					{pr.description && (
 						<motion.p
-							variants={block}
+							variants={contentAnimation}
 							className="text-gray-500 dark:text-gray-300 text-sm md:text-lg mb-2 md:mb-4"
 						>
 							{pr.description}
 						</motion.p>
 					)}
 					<motion.div
-						variants={techContainer}
+						variants={techAnimation}
 						className="flex flex-wrap justify-start items-center"
 					>
 						{pr.technologies.map((tech) => (
-							<motion.div key={tech} variants={block}>
+							<motion.div key={tech} variants={contentAnimation}>
 								<Technology
 									className="mr-2 mb-2"
 									name={technologies[tech].name}
@@ -154,7 +154,7 @@ function ExperienceItem({
 						))}
 					</motion.div>
 					<motion.h3
-						variants={block}
+						variants={contentAnimation}
 						className="font-normal text-gray-800 dark:text-white text-lg md:text-xl mb-2"
 					>
 						Responsibilities:
@@ -162,7 +162,7 @@ function ExperienceItem({
 					<ul className="text-gray-500 dark:text-gray-300 text-sm md:text-lg list-disc list-inside">
 						{pr.responsibilities.map((rb) => (
 							<motion.li
-								variants={block}
+								variants={contentAnimation}
 								key={rb}
 								className="my-1"
 							>

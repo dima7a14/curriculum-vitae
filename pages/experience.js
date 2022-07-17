@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { motion, useScroll, useSpring } from 'framer-motion';
 
 import experience from '../consts/experience';
 
@@ -53,8 +54,18 @@ function getRandomColor(originColors) {
 }
 
 function Experience({ items, colors }) {
+	const { scrollYProgress } = useScroll();
+	const scaleX = useSpring(scrollYProgress, {
+		stiffness: 100,
+		damping: 30,
+		restDelta: 0.001,
+	});
 	return (
 		<section className="relative w-full px-6 py-12 bg-white dark:bg-gray-800 shadow-xl shadow-slate-700/10 ring-1 ring-gray-900/5 md:max-w-3xl md:mx-auto lg:max-w-4xl pt-4 sm:pt-6 lg:pt-8 lg:pb-12 rounded-lg">
+			<motion.div
+				style={{ scaleX }}
+				className="fixed top-0 left-0 right-0 h-2 origin-top-left z-10 bg-sky-200 dark:bg-violet-400 shadow-xl shadow-slate-700/10 ring-1 ring-gray-900/5"
+			/>
 			<Head title="My experience" />
 			<h1 className="text-center text-gray-800 dark:text-white text-2xl md:text-4xl font-light mb-4">
 				Experience
