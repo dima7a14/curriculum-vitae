@@ -2,7 +2,7 @@ import React from 'react';
 
 import Logo from './logo';
 import Menu from './menu';
-import ThemeSwitcher from './themeSwitcher';
+import ThemeSwitcher from './theme-switcher';
 
 function Header() {
 	return (

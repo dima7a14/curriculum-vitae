@@ -45,25 +45,30 @@ export function getLevelColors(level) {
 	}
 }
 
-function Technology({ level, name, Icon, className, iconClassName }) {
-	const colors = getLevelColors(level);
+const Technology = React.forwardRef(
+	({ level, name, Icon, className, iconClassName }, ref) => {
+		const colors = getLevelColors(level);
 
-	return (
-		<Chip
-			className={clsx(
-				'text-white dark:text-white flex flex-row flex-nowrap space-x-2 items-center',
-				colors.bg,
-				colors.border,
-				className
-			)}
-		>
-			{Icon && (
-				<Icon className={clsx('text-lg rounded', iconClassName)} />
-			)}
-			<span>{name}</span>
-		</Chip>
-	);
-}
+		return (
+			<Chip
+				className={clsx(
+					'text-white dark:text-white flex flex-row flex-nowrap space-x-2 items-center',
+					colors.bg,
+					colors.border,
+					className
+				)}
+				ref={ref}
+			>
+				{Icon && (
+					<Icon className={clsx('text-lg rounded', iconClassName)} />
+				)}
+				<span>{name}</span>
+			</Chip>
+		);
+	}
+);
+
+Technology.displayName = 'Technology';
 
 Technology.propTypes = {
 	level: PropTypes.oneOf([1, 2, 3, 4, 5]).isRequired,
