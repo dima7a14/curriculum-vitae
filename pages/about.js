@@ -7,7 +7,8 @@ import links from '../consts/links';
 import technologiesMap from '../consts/technologies';
 
 import Head from '../components/head';
-import Technology, { getLevelColors } from '../components/technology';
+import SkillSet from '../components/skill-set';
+import { getLevelColors } from '../components/technology';
 
 import profilePic from '../public/profile.jpg';
 import styles from '../styles/about.module.css';
@@ -37,21 +38,6 @@ const greetingsAnimation = {
 const contentAnimation = {
 	hidden: { opacity: 0, scale: 0.5, y: 60 },
 	visible: { opacity: 1, scale: 1, y: 0 },
-};
-
-const techAnimation = {
-	hidden: { opacity: 0 },
-	visible: {
-		opacity: 1,
-		transition: {
-			staggerChildren: 0.1,
-		},
-	},
-};
-
-const techItemAnimation = {
-	hidden: { opacity: 0, y: 60 },
-	visible: { opacity: 1, y: 0 },
 };
 
 function About() {
@@ -162,24 +148,7 @@ function About() {
 				>
 					Technologies &amp; Tools
 				</motion.h4>
-				<motion.div
-					variants={techAnimation}
-					initial="hidden"
-					whileInView="visible"
-					viewport={{ once: true }}
-					className="flex flex-row flex-wrap items-center"
-				>
-					{technologies.map(({ name, level, Icon }) => (
-						<motion.div key={name} variants={techItemAnimation}>
-							<Technology
-								name={name}
-								Icon={Icon}
-								level={level}
-								className="mb-2 mr-2"
-							/>
-						</motion.div>
-					))}
-				</motion.div>
+				<SkillSet skills={technologies} />
 				<motion.h4
 					variants={contentAnimation}
 					initial="hidden"
