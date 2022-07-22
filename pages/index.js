@@ -45,16 +45,10 @@ function HomePage() {
 			<div className="prose dark:prose-invert prose-2xl w-full prose-p:my-4 md:prose-p:my-8 prose-p:text-lg sm:prose-p:text-2xl text-center">
 				<motion.h1
 					variants={contentAnimation}
-					className="font-light text-3xl md:text-5xl"
-				>
-					Dima Danyliuk
-				</motion.h1>
-				<motion.h2
-					variants={contentAnimation}
-					className="font-normal text-3xl md:text-4xl md:mt-0 md:mb-8"
+					className="font-light text-3xl md:text-5xl md:mb-24"
 				>
 					Curriculum Vitae
-				</motion.h2>
+				</motion.h1>
 				<div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-2 justify-center">
 					<LinkTo
 						href={routes.about.href}
@@ -78,7 +72,7 @@ function HomePage() {
 								<Button
 									variant="secondary"
 									type="link"
-									className="flex flex-row space-x-2 justify-center items-center"
+									className="inline-flex flex-row space-x-2 justify-center items-center"
 									{...btnProps}
 								/>
 							</motion.div>
