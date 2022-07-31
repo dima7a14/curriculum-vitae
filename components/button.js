@@ -91,6 +91,7 @@ const Button = forwardRef(
 				className={btnClassName}
 				onClick={onClick}
 				onKeyPress={onKeyPress}
+				{...other}
 			>
 				{children}
 			</button>

@@ -4,6 +4,7 @@ import clsx from 'clsx';
 
 import styles from '../styles/layout.module.css';
 import Header from './header';
+import ScrollTop from './scroll-top';
 
 function Layout({ children }) {
 	return (
@@ -15,6 +16,7 @@ function Layout({ children }) {
 		>
 			<Header />
 			<div className="max-w-full mx-auto p-8">{children}</div>
+			<ScrollTop />
 		</div>
 	);
 }
