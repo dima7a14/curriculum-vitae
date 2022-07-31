@@ -1,6 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { FiCoffee } from 'react-icons/fi';
-import { motion, AnimatePresence } from 'framer-motion';
+import {
+	motion,
+	AnimatePresence,
+	animate,
+	useMotionValue,
+} from 'framer-motion';
 
 import links from '../consts/links';
 
@@ -19,35 +24,34 @@ const logos = [
 	})),
 ];
 
-const LOGO_TIMEOUT = 4000;
-
 function Logo() {
 	const [logoIndex, setLogoIndex] = useState(0);
 	const currentLogo = logos[logoIndex];
-	const getNextLogoIndex = (index) => {
-		if (index + 1 === logos.length) {
-			return 0;
-		}
-
-		return index + 1;
-	};
-	const logoInterval = useRef(null);
+	const progress = useMotionValue(logoIndex);
+	const animation = useRef(null);
 	const startAnimation = () => {
-		logoInterval.current = setInterval(() => {
-			setLogoIndex(getNextLogoIndex);
-		}, LOGO_TIMEOUT);
+		animation.current = animate(progress, logoIndex, {
+			duration: 4,
+			ease: 'easeInOut',
+			onComplete: () => {
+				if (logoIndex === logos.length - 1) {
+					progress.set(0);
+					setLogoIndex(1);
+				} else {
+					setLogoIndex(logoIndex + 1);
+				}
+			},
+		});
 	};
-	const pauseAnimation = () => {
-		clearTimeout(logoInterval.current);
+	const stopAnimation = () => {
+		animation.current.stop();
 	};
 
 	useEffect(() => {
 		startAnimation();
 
-		return () => {
-			pauseAnimation();
-		};
-	}, []);
+		return () => animation.current.stop();
+	}, [logoIndex]);
 
 	return (
 		<AnimatePresence exitBeforeEnter initial={false}>
@@ -57,11 +61,11 @@ function Logo() {
 				animate={{ opacity: 1, y: 0 }}
 				exit={{ opacity: 0, y: 20 }}
 				transition={{ duration: 0.1 }}
-				onHoverStart={pauseAnimation}
+				onHoverStart={stopAnimation}
 				onHoverEnd={startAnimation}
-				onPanStart={pauseAnimation}
+				onPanStart={stopAnimation}
 				onPanEnd={startAnimation}
-				onTapStart={pauseAnimation}
+				onTapStart={stopAnimation}
 				onTapCancel={startAnimation}
 			>
 				<LinkTo
