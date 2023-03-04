@@ -25,6 +25,10 @@ import {
 	SiPhp,
 	SiJss,
 	SiNodedotjs,
+	SiFastify,
+	SiSolid,
+	SiTrpc,
+	SiVite,
 } from 'react-icons/si';
 import {
 	DiHtml5,
@@ -75,7 +79,7 @@ const technologies = {
 		name: 'Dart',
 		level: 1,
 		Icon: SiDart,
-		experience: 'in learning',
+		experience: 'a little',
 		language: true,
 		favorite: true,
 		lastUsage: '2022-01-23',
@@ -105,7 +109,7 @@ const technologies = {
 		lastUsage: '2022-07-17',
 	},
 	sass: {
-		name: 'Sass',
+		name: 'SCSS',
 		level: 3,
 		Icon: DiSass,
 		language: false,
@@ -292,7 +296,7 @@ const technologies = {
 	},
 	node: {
 		name: 'Node.js',
-		level: 1,
+		level: 3,
 		Icon: SiNodedotjs,
 		language: false,
 		favorite: false,
@@ -429,6 +433,45 @@ const technologies = {
 		language: false,
 		favorite: false,
 		lastUsage: '2020-05-30',
+	},
+	fastify: {
+		name: 'Fastify',
+		level: 4,
+		Icon: SiFastify,
+		language: false,
+		favorite: true,
+		lastUsage: '2023-02-13',
+	},
+	knex: {
+		name: 'Knex',
+		level: 2,
+		language: false,
+		favorite: true,
+		lastUsage: '2023-02-13',
+	},
+	solidJS: {
+		name: 'Solid.js',
+		level: 4,
+		Icon: SiSolid,
+		language: false,
+		favorite: true,
+		lastUsage: '2023-02-19',
+	},
+	trpc: {
+		name: 'TRPC',
+		level: 3,
+		Icon: SiTrpc,
+		language: false,
+		favorite: true,
+		lastUsage: '2022-11-15',
+	},
+	vite: {
+		name: 'Vite',
+		level: 2,
+		Icon: SiVite,
+		language: false,
+		favorite: false,
+		lastUsage: '2023-02-19',
 	},
 };
 
