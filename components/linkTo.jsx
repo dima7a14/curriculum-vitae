@@ -21,9 +21,9 @@ const LinkTo = forwardRef(
 	) => {
 		if (Component) {
 			return (
-				<Link
-					ref={ref}
-					{...{
+                <Link
+                    ref={ref}
+                    {...{
 						href,
 						as,
 						replace,
@@ -33,16 +33,16 @@ const LinkTo = forwardRef(
 						locale,
 						passHref,
 					}}
-				>
+                    legacyBehavior>
 					<Component {...anchorProps} href={href}>
 						{children}
 					</Component>
 				</Link>
-			);
+            );
 		}
 
 		return (
-			<Link
+            <Link
 				ref={ref}
 				{...{
 					href,
@@ -55,9 +55,9 @@ const LinkTo = forwardRef(
 					passHref,
 				}}
 			>
-				<a {...anchorProps}>{children}</a>
+				{children}
 			</Link>
-		);
+        );
 	}
 );
 

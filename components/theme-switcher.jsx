@@ -1,3 +1,5 @@
+'use client';
+
 import React, { Fragment, useState, useEffect, useLayoutEffect } from 'react';
 import { FaSun, FaRegMoon, FaTimes, FaCog } from 'react-icons/fa';
 import { Popover, Transition } from '@headlessui/react';

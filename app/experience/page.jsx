@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { motion, useScroll, useSpring } from 'framer-motion';
 
-import experience from '../consts/experience';
+import experience from '../../consts/experience';
 
-import Head from '../components/head';
-import ExperienceItem from '../components/experience-item';
+import Head from '../../components/head';
+import ExperienceItem from '../../components/experience-item';
 
 const availableColors = [
 	{
@@ -53,7 +53,8 @@ function getRandomColor(originColors) {
 	return colors;
 }
 
-function Experience({ items, colors }) {
+function Experience() {
+	const colors = useMemo(() => getRandomColor(availableColors), []);
 	const { scrollYProgress } = useScroll();
 	const scaleX = useSpring(scrollYProgress, {
 		stiffness: 100,
@@ -71,7 +72,7 @@ function Experience({ items, colors }) {
 				Experience
 			</h1>
 			<ol>
-				{items.map((exp, expIndex) => {
+				{experience.map((exp, expIndex) => {
 					const colorIndex =
 						expIndex >= colors.length
 							? expIndex % colors.length
@@ -92,20 +93,6 @@ function Experience({ items, colors }) {
 			</ol>
 		</section>
 	);
-}
-
-Experience.propTypes = {
-	items: PropTypes.arrayOf(PropTypes.object).isRequired,
-	colors: PropTypes.arrayOf(PropTypes.object).isRequired,
-};
-
-export async function getStaticProps() {
-	return {
-		props: {
-			items: experience,
-			colors: getRandomColor(availableColors),
-		},
-	};
 }
 
 export default Experience;

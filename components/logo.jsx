@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState, useEffect, useRef } from 'react';
 import { FiCoffee } from 'react-icons/fi';
 import {

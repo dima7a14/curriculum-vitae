@@ -28,6 +28,13 @@
         "prettier",
 		"jsx-a11y"
     ],
+	"settings": {
+		"import/resolver": {
+			"node": {
+				"extensions": [".js", ".jsx"]
+			}
+		}
+	},
     "rules": {
       "prettier/prettier": ["error"]
     }

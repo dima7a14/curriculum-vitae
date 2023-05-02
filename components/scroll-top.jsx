@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useCallback, useEffect } from 'react';
 import { useMotionValue, useScroll, motion, animate } from 'framer-motion';
 import { AiOutlineArrowUp } from 'react-icons/ai';

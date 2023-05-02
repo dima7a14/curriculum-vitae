@@ -3,15 +3,15 @@ import Image from 'next/image';
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
 
-import links from '../consts/links';
-import technologiesMap from '../consts/technologies';
+import links from '../../consts/links';
+import technologiesMap from '../../consts/technologies';
 
-import Head from '../components/head';
-import SkillSet from '../components/skill-set';
-import { getLevelColors } from '../components/technology';
+import Head from '../../components/head';
+import SkillSet from '../../components/skill-set';
+import { getLevelColors } from '../../components/technology';
 
-import profilePic from '../public/profile.jpg';
-import styles from '../styles/about.module.css';
+import profilePic from '../../public/profile.jpg';
+import styles from '../../styles/about.module.css';
 
 const sectionAnimation = {
 	hidden: {

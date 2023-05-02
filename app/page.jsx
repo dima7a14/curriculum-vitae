@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import { FaDownload } from 'react-icons/fa';
 import { motion } from 'framer-motion';

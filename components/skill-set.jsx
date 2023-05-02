@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState, useEffect, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import { motion, AnimatePresence, Reorder } from 'framer-motion';

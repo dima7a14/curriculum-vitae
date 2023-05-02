@@ -1,5 +1,7 @@
+'use client';
+
 import React, { useMemo, Fragment } from 'react';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 import clsx from 'clsx';
 import { Popover, Transition } from '@headlessui/react';
 import { FaBars, FaTimes } from 'react-icons/fa';
