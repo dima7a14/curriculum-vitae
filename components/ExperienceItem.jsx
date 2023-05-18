@@ -7,7 +7,7 @@ import { motion } from 'framer-motion';
 import technologies from '../consts/technologies';
 import getRandomNumber from '../utils/get-random-number';
 
-import Technology from './technology';
+import Technology from './Technology';
 
 function ExperienceItem({
 	color,

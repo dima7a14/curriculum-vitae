@@ -1,41 +1,28 @@
-'use client';
-
-import React from 'react';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
-import { LazyMotion, m, domAnimation, AnimatePresence } from 'framer-motion';
 
-import Header from '../components/header';
-import ScrollTop from '../components/scroll-top';
+import Header from '../components/Header';
+import ScrollTop from '../components/ScrollTop';
+import MotionLayout from '../components/MotionLayout';
 import '../styles/globals.css';
 import styles from '../styles/layout.module.css';
-
-const animation = {
-	variants: {
-		initial: {
-			opacity: 0,
-			top: '100vh',
-			scale: 0.4,
-		},
-		animate: {
-			opacity: 1,
-			top: '0vh',
-			scale: 1,
-		},
-		exit: {
-			opacity: 0,
-			top: '100vh',
-			scale: 0.4,
-		},
-	},
-	transition: {
-		duration: 0.4,
-	},
-};
 
 function Layout({ children }) {
 	return (
 		<html lang="en">
+			<head>
+				<title>Dima Danyliuk - Curriculum Vitae</title>
+				<link rel="preconnect" href="https://fonts.googleapis.com" />
+				<link
+					rel="preconnect"
+					href="https://fonts.gstatic.com"
+					crossorigin // eslint-disable-line react/no-unknown-property
+				/>
+				<link
+					href="https://fonts.googleapis.com/css2?family=Lalezar&family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap"
+					rel="stylesheet"
+				/>
+			</head>
 			<body>
 				<div
 					className={clsx(
@@ -45,19 +32,7 @@ function Layout({ children }) {
 				>
 					<Header />
 					<div className="max-w-full mx-auto p-8">
-						<LazyMotion features={domAnimation}>
-							<AnimatePresence exitBeforeEnter>
-								<m.div
-									variants={animation.variants}
-									transition={animation.transition}
-									initial="initial"
-									animate="animate"
-									exit="exit"
-								>
-									{children}
-								</m.div>
-							</AnimatePresence>
-						</LazyMotion>
+						<MotionLayout>{children}</MotionLayout>
 					</div>
 					<ScrollTop />
 				</div>

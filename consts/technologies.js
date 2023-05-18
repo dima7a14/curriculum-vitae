@@ -29,6 +29,8 @@ import {
 	SiSolid,
 	SiTrpc,
 	SiVite,
+	SiEslint,
+	SiPrettier,
 } from 'react-icons/si';
 import {
 	DiHtml5,
@@ -472,6 +474,22 @@ const technologies = {
 		language: false,
 		favorite: false,
 		lastUsage: '2023-02-19',
+	},
+	eslint: {
+		name: 'Eslint',
+		level: 4,
+		icon: SiEslint,
+		language: false,
+		favorite: true,
+		lastUsage: '2023-05-10',
+	},
+	prettier: {
+		name: 'Prettier',
+		level: 5,
+		icon: SiPrettier,
+		language: false,
+		favorite: true,
+		lastUsage: '2023-05-10',
 	},
 };
 

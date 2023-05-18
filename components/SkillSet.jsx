@@ -6,8 +6,8 @@ import { motion, AnimatePresence, Reorder } from 'framer-motion';
 import { BiSortAlt2 } from 'react-icons/bi';
 import dayjs from 'dayjs';
 
-import Technology from './technology';
-import Button from './button';
+import Technology from './Technology';
+import Button from './Button';
 
 const techAnimation = {
 	hidden: { opacity: 0 },

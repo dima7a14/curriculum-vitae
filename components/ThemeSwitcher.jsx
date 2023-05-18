@@ -5,7 +5,7 @@ import { FaSun, FaRegMoon, FaTimes, FaCog } from 'react-icons/fa';
 import { Popover, Transition } from '@headlessui/react';
 import clsx from 'clsx';
 
-import Button from './button';
+import Button from './Button';
 
 function getSystemScheme() {
 	if (typeof window === 'undefined') {

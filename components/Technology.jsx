@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
 
-import Chip from './chip';
+import Chip from './Chip';
 
 export function getLevelColors(level) {
 	switch (level) {

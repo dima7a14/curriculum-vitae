@@ -1,10 +1,10 @@
 'use client';
 
-import React, { useCallback, useEffect } from 'react';
+import { useCallback, useEffect } from 'react';
 import { useMotionValue, useScroll, motion, animate } from 'framer-motion';
 import { AiOutlineArrowUp } from 'react-icons/ai';
 
-import Button from './button';
+import Button from './Button';
 
 const MotionButton = motion(Button);
 

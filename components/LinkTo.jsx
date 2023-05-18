@@ -1,4 +1,4 @@
-import React, { forwardRef } from 'react';
+import { forwardRef } from 'react';
 import Link from 'next/link';
 import PropTypes from 'prop-types';
 
@@ -14,6 +14,7 @@ const LinkTo = forwardRef(
 			prefetch,
 			locale,
 			passHref,
+			className,
 			component: Component,
 			...anchorProps
 		},
@@ -21,9 +22,9 @@ const LinkTo = forwardRef(
 	) => {
 		if (Component) {
 			return (
-                <Link
-                    ref={ref}
-                    {...{
+				<Link
+					ref={ref}
+					{...{
 						href,
 						as,
 						replace,
@@ -33,16 +34,21 @@ const LinkTo = forwardRef(
 						locale,
 						passHref,
 					}}
-                    legacyBehavior>
-					<Component {...anchorProps} href={href}>
+					legacyBehavior
+				>
+					<Component
+						{...anchorProps}
+						href={href}
+						className={className}
+					>
 						{children}
 					</Component>
 				</Link>
-            );
+			);
 		}
 
 		return (
-            <Link
+			<Link
 				ref={ref}
 				{...{
 					href,
@@ -53,11 +59,12 @@ const LinkTo = forwardRef(
 					prefetch,
 					locale,
 					passHref,
+					className,
 				}}
 			>
 				{children}
 			</Link>
-        );
+		);
 	}
 );
 
@@ -66,6 +73,7 @@ LinkTo.displayName = 'LinkTo';
 LinkTo.propTypes = {
 	children: PropTypes.node.isRequired,
 	href: PropTypes.string.isRequired,
+	className: PropTypes.string,
 	as: PropTypes.string,
 	replace: PropTypes.bool,
 	scroll: PropTypes.bool,

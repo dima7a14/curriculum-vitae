@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { FiCoffee } from 'react-icons/fi';
 import {
 	motion,
@@ -9,9 +9,9 @@ import {
 	useMotionValue,
 } from 'framer-motion';
 
-import links from '../consts/links';
+import { contacts } from '../consts/data';
 
-import LinkTo from './linkTo';
+import LinkTo from './LinkTo';
 
 const logos = [
 	{
@@ -19,7 +19,7 @@ const logos = [
 		href: '/',
 		local: true,
 	},
-	...links.map(({ link, Icon }) => ({
+	...contacts.map(({ link, Icon }) => ({
 		href: link,
 		Icon,
 		local: false,

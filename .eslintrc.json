@@ -8,6 +8,7 @@
         "eslint:recommended",
 		"airbnb-base",
         "plugin:react/recommended",
+		"plugin:react/jsx-runtime",
         "prettier",
 		"plugin:jsx-a11y/strict"
     ],

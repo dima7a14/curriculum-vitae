@@ -1,4 +1,6 @@
-const experience = [
+import { FaLinkedin, FaGithub, FaSkype, FaEnvelope } from 'react-icons/fa';
+
+export const experience = [
 	{
 		company: 'Xenoss',
 		companyLink: 'https://xenoss.io/',
@@ -207,4 +209,81 @@ const experience = [
 	},
 ];
 
-export default experience;
+export const contacts = [
+	{
+		Icon: FaLinkedin,
+		link: 'https://www.linkedin.com/in/dima-danyliuk-a689aba3/',
+		label: 'LinkedIn',
+	},
+	{
+		Icon: FaGithub,
+		link: 'https://github.com/dima7a14',
+		label: 'Github',
+	},
+	{
+		Icon: FaSkype,
+		link: 'skype:dima7a14?chat',
+		label: 'Skype',
+	},
+	{
+		Icon: FaEnvelope,
+		link: 'mailto:byte4byte007@gmail.com',
+		label: 'E-mail',
+	},
+];
+
+export const about = {
+	title: 'Dima Danyliuk',
+	subTitle: 'Front-End Developer',
+	contacts,
+	bio: [
+		'I am a developer based in Ukraine 🇺🇦 with a passion for learning new things, reading different books, and playing unique indie games.',
+		'Also, I have a dream to create some meaningful projects and build my own custom robot)',
+		'Feel free to contact me if you have any questions.',
+	],
+};
+
+export const education = [
+	"Poltava National Technical University, master's degree in computer systems and networks in 2016.",
+];
+
+export const languages = ['js', 'ts', 'python'];
+
+export const mainSkills = [
+	'react',
+	'next',
+	'solidJS',
+	'redux',
+	'mobx',
+	'reactQuery',
+	'trpc',
+	'formik',
+	'reactFinalForm',
+	'materialUI',
+	'chakraUI',
+	'bootstrap',
+	'tailwind',
+	'prebid',
+	'node',
+	'fastify',
+	'knex',
+	'django',
+	'drf',
+	'webpack',
+	'vite',
+	'eslint',
+	'prettier',
+];
+
+export const additionalSkills = [
+	'vue',
+	'jquery',
+	'sass',
+	'reduxSaga',
+	'flutter',
+	'flask',
+	'reactNative',
+	'suppabase',
+	'postgresql',
+	'express',
+];
