@@ -1,7 +1,4 @@
 import {
-	SiJavascript,
-	SiTypescript,
-	SiPython,
 	SiDart,
 	SiReact,
 	SiMaterialui,
@@ -32,6 +29,7 @@ import {
 	SiEslint,
 	SiPrettier,
 } from 'react-icons/si';
+import { TbBrandJavascript, TbBrandTypescript } from 'react-icons/tb';
 import {
 	DiHtml5,
 	DiCss3Full,
@@ -47,13 +45,14 @@ import {
 	FaGrunt,
 	FaLinux,
 	FaDocker,
+	FaPython,
 } from 'react-icons/fa';
 
 const technologies = {
 	js: {
 		name: 'JavaScript',
 		level: 5,
-		Icon: SiJavascript,
+		Icon: TbBrandJavascript,
 		experience: 'daily usage',
 		language: true,
 		favorite: false,
@@ -61,8 +60,8 @@ const technologies = {
 	},
 	ts: {
 		name: 'TypeScript',
-		level: 5,
-		Icon: SiTypescript,
+		level: 4,
+		Icon: TbBrandTypescript,
 		experience: 'daily usage',
 		language: true,
 		favorite: true,
@@ -71,8 +70,8 @@ const technologies = {
 	python: {
 		name: 'Python',
 		level: 3,
-		Icon: SiPython,
-		experience: 'personal pick',
+		Icon: FaPython,
+		experience: 'pet projects',
 		language: true,
 		favorite: true,
 		lastUsage: '2022-07-17',
@@ -81,7 +80,7 @@ const technologies = {
 		name: 'Dart',
 		level: 1,
 		Icon: SiDart,
-		experience: 'a little',
+		experience: 'experimenting',
 		language: true,
 		favorite: true,
 		lastUsage: '2022-01-23',
@@ -120,7 +119,7 @@ const technologies = {
 	},
 	jss: {
 		name: 'JSS',
-		level: 4,
+		level: 5,
 		Icon: SiJss,
 		language: false,
 		favorite: false,
@@ -184,7 +183,7 @@ const technologies = {
 	},
 	next: {
 		name: 'Next.js',
-		level: 4,
+		level: 5,
 		Icon: SiNextdotjs,
 		language: false,
 		favorite: true,
@@ -208,7 +207,7 @@ const technologies = {
 	},
 	reduxToolkit: {
 		name: 'Redux Toolkit',
-		level: 1,
+		level: 2,
 		language: false,
 		favorite: false,
 		lastUsage: '2021-12-20',
@@ -230,7 +229,7 @@ const technologies = {
 	},
 	reactQuery: {
 		name: 'React Query',
-		level: 3,
+		level: 4,
 		language: false,
 		favorite: true,
 		lastUsage: '2022-05-10',
@@ -274,7 +273,7 @@ const technologies = {
 	},
 	webpack: {
 		name: 'Webpack',
-		level: 3,
+		level: 4,
 		Icon: SiWebpack,
 		language: false,
 		favorite: false,
@@ -361,7 +360,7 @@ const technologies = {
 	},
 	express: {
 		name: 'Express.js',
-		level: 3,
+		level: 4,
 		Icon: SiExpress,
 		language: false,
 		favorite: false,
@@ -369,7 +368,7 @@ const technologies = {
 	},
 	socketIO: {
 		name: 'Socket.io',
-		level: 4,
+		level: 3,
 		Icon: SiSocketdotio,
 		language: false,
 		favorite: false,
@@ -385,7 +384,7 @@ const technologies = {
 	},
 	mongodb: {
 		name: 'MongoDB',
-		level: 1,
+		level: 2,
 		Icon: SiMongodb,
 		language: false,
 		favorite: false,
@@ -393,7 +392,7 @@ const technologies = {
 	},
 	sequelize: {
 		name: 'Sequelize',
-		level: 1,
+		level: 2,
 		Icon: SiSequelize,
 		language: false,
 		favorite: false,

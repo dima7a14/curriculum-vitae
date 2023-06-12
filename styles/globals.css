@@ -4,6 +4,6 @@
 
 @layer components {
 	.reflect {
-		-webkit-box-reflect: below -70% linear-gradient(transparent 30%, rgba(0,0,0,.1) 90%, rgba(0,0,0,.3) 100%);
+		-webkit-box-reflect: below 10% linear-gradient(transparent 30%, rgba(0,0,0,.1) 60%, rgba(0,0,0,.3) 100%);
 	}
 }

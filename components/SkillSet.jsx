@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import { motion, AnimatePresence, Reorder } from 'framer-motion';
 import { BiSortAlt2 } from 'react-icons/bi';
@@ -133,7 +133,7 @@ function SkillSet({ skills }) {
 	}, [skills]);
 
 	return (
-		<div>
+		<>
 			<SortButton onSort={handleSort} />
 			<Reorder.Group
 				variants={techAnimation}
@@ -181,7 +181,7 @@ function SkillSet({ skills }) {
 					</motion.div>
 				))}
 			</motion.div> */}
-		</div>
+		</>
 	);
 }
 

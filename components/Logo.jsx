@@ -74,7 +74,7 @@ function Logo() {
 					href={currentLogo.href}
 					target={currentLogo.local ? '_self' : '_blank'}
 					rel="noreferrer"
-					className="drop-shadow-2xl px-2 py-2 text-4xl md:text-5xl text-gray-800 dark:text-white hover:text-sky-600 dark:hover:text-purple-500 transition-colors duration-200 ease-in-out"
+					className="drop-shadow-2xl px-2 py-2 text-4xl md:text-5xl text-gray-800 dark:text-white hover:text-sky-700 dark:hover:text-purple-400 transition-colors duration-200 ease-in-out"
 				>
 					<currentLogo.Icon />
 				</LinkTo>

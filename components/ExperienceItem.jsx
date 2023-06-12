@@ -1,11 +1,11 @@
-import React, { useMemo } from 'react';
+import { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
 import { FaExternalLinkAlt } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 
 import technologies from '../consts/technologies';
-import getRandomNumber from '../utils/get-random-number';
+import getRandomNumber from '../utils/getRandomNumber';
 
 import Technology from './Technology';
 
@@ -91,7 +91,7 @@ function ExperienceItem({
 							target="_blank"
 							rel="noreferrer"
 							className={clsx(
-								'italic hover:text-sky-600 text-sm md:text-lg ml-2',
+								'italic hover:text-sky-700 text-sm md:text-lg ml-2',
 								color.text
 							)}
 						>
@@ -122,7 +122,7 @@ function ExperienceItem({
 								target="_blank"
 								rel="noreferrer"
 								className={clsx(
-									'italic hover:text-sky-600 text-sm md:text-lg ml-2',
+									'italic hover:text-sky-700 text-sm md:text-lg ml-2',
 									color.text
 								)}
 							>

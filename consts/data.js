@@ -237,8 +237,8 @@ export const about = {
 	subTitle: 'Front-End Developer',
 	contacts,
 	bio: [
-		'I am a developer based in Ukraine 🇺🇦 with a passion for learning new things, reading different books, and playing unique indie games.',
-		'Also, I have a dream to create some meaningful projects and build my own custom robot)',
+		'I am a developer with a passion for learning new things, reading different books, and playing unique indie games.',
+		'Also, I have a dream to create some meaningful projects and build my own custom robot.',
 		'Feel free to contact me if you have any questions.',
 	],
 };
@@ -247,7 +247,7 @@ export const education = [
 	"Poltava National Technical University, master's degree in computer systems and networks in 2016.",
 ];
 
-export const languages = ['js', 'ts', 'python'];
+export const languages = ['js', 'ts', 'python', 'dart'];
 
 export const mainSkills = [
 	'react',

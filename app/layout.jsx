@@ -16,10 +16,10 @@ function Layout({ children }) {
 				<link
 					rel="preconnect"
 					href="https://fonts.gstatic.com"
-					crossorigin // eslint-disable-line react/no-unknown-property
+					crossOrigin="true"
 				/>
 				<link
-					href="https://fonts.googleapis.com/css2?family=Lalezar&family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap"
+					href="https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap"
 					rel="stylesheet"
 				/>
 			</head>
@@ -34,7 +34,7 @@ function Layout({ children }) {
 					<div className="max-w-full mx-auto p-8">
 						<MotionLayout>{children}</MotionLayout>
 					</div>
-					<ScrollTop />
+					{/* <ScrollTop /> */}
 				</div>
 			</body>
 		</html>

@@ -123,8 +123,8 @@ function ThemeSwitcher() {
 			<Popover.Button
 				as={Button}
 				className={clsx(
-					'mr-4 px-2',
-					manuallySelected && 'text-sky-600 dark:text-purple-500'
+					'px-2',
+					manuallySelected && 'text-sky-700 dark:text-purple-400'
 				)}
 			>
 				{colorScheme === 'light' && <FaSun className="w-6 h-6" />}
