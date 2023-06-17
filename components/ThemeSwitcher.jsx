@@ -1,6 +1,6 @@
 'use client';
 
-import React, { Fragment, useState, useEffect, useLayoutEffect } from 'react';
+import { Fragment, useState, useEffect, useLayoutEffect } from 'react';
 import { FaSun, FaRegMoon, FaTimes, FaCog } from 'react-icons/fa';
 import { Popover, Transition } from '@headlessui/react';
 import clsx from 'clsx';
@@ -123,7 +123,7 @@ function ThemeSwitcher() {
 			<Popover.Button
 				as={Button}
 				className={clsx(
-					'px-2',
+					'p-2 rounded-lg',
 					manuallySelected && 'text-sky-700 dark:text-purple-400'
 				)}
 			>
@@ -146,9 +146,12 @@ function ThemeSwitcher() {
 				>
 					<div className="rounded-b-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white dark:bg-gray-800 p-2">
 						<div className="flex items-center justify-end">
-							<Popover.Button as={Button} className="px-2">
+							<Popover.Button
+								as={Button}
+								className="p-1 rounded-lg"
+							>
 								<FaTimes
-									className="w-6 h-6"
+									className="w-5 h-5"
 									aria-hidden="true"
 								/>
 							</Popover.Button>
@@ -156,7 +159,7 @@ function ThemeSwitcher() {
 						<div className="mt-2 flex flex-col space-y-2">
 							<Popover.Button
 								as={Button}
-								className="flex flex-row space-x-2 items-center justify-center"
+								className="flex flex-row space-x-2 items-center justify-center rounded-lg px-2"
 								variant={
 									getActiveScheme() === 'light'
 										? 'primary'
@@ -169,7 +172,7 @@ function ThemeSwitcher() {
 							</Popover.Button>
 							<Popover.Button
 								as={Button}
-								className="flex flex-row space-x-2 items-center justify-center"
+								className="flex flex-row space-x-2 items-center justify-center rounded-lg px-2"
 								variant={
 									getActiveScheme() === 'dark'
 										? 'primary'
@@ -182,7 +185,7 @@ function ThemeSwitcher() {
 							</Popover.Button>
 							<Popover.Button
 								as={Button}
-								className="flex flex-row space-x-2 items-center justify-center"
+								className="flex flex-row space-x-2 items-center justify-center rounded-lg px-2"
 								variant={
 									getActiveScheme() === 'system'
 										? 'primary'

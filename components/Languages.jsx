@@ -11,7 +11,7 @@ export default function Languages() {
 	if (items.length === 0) return null;
 
 	return (
-		<>
+		<div className="mt-4">
 			<Heading text="Languages" />
 			<ul className="flex flex-col flex-nowrap space-y-2 relative">
 				{items.map(({ name, level, experience, Icon }) => (
@@ -29,6 +29,6 @@ export default function Languages() {
 					</li>
 				))}
 			</ul>
-		</>
+		</div>
 	);
 }

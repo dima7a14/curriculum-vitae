@@ -477,7 +477,7 @@ const technologies = {
 	eslint: {
 		name: 'Eslint',
 		level: 4,
-		icon: SiEslint,
+		Icon: SiEslint,
 		language: false,
 		favorite: true,
 		lastUsage: '2023-05-10',
@@ -485,7 +485,7 @@ const technologies = {
 	prettier: {
 		name: 'Prettier',
 		level: 5,
-		icon: SiPrettier,
+		Icon: SiPrettier,
 		language: false,
 		favorite: true,
 		lastUsage: '2023-05-10',

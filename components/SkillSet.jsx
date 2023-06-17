@@ -2,8 +2,8 @@
 
 import { useState, useEffect, useCallback } from 'react';
 import PropTypes from 'prop-types';
-import { motion, AnimatePresence, Reorder } from 'framer-motion';
-import { BiSortAlt2 } from 'react-icons/bi';
+import clsx from 'clsx';
+import { Reorder } from 'framer-motion';
 import dayjs from 'dayjs';
 
 import Technology from './Technology';
@@ -58,11 +58,6 @@ function sortByFavorite(a, b) {
 }
 
 const SORT_STATES = {
-	initial: {
-		label: '',
-		next: 'known',
-		sort: () => 0,
-	},
 	known: {
 		label: 'Well known',
 		next: 'recent',
@@ -75,38 +70,40 @@ const SORT_STATES = {
 	},
 	favorite: {
 		label: 'Favorite',
-		next: 'initial',
+		next: 'known',
 		sort: sortByFavorite,
 	},
 };
 
 function SortButton({ onSort }) {
-	const [order, setOrder] = useState('initial');
-	const sortState = SORT_STATES[order];
-	const handleClick = () => {
-		setOrder(sortState.next);
-		onSort(sortState.next);
-	};
+	const [activeOrder, setActiveOrder] = useState('known');
 
 	return (
-		<AnimatePresence exitBeforeEnter initial={false}>
-			<motion.div
-				key={order}
-				initial={{ opacity: 0, y: -20 }}
-				animate={{ opacity: 1, y: 0 }}
-				exit={{ opacity: 0, y: 20 }}
-				transition={{ duration: 0.1 }}
-				className="flex flex-row justify-end -mt-6 mb-4 sm:-mt-16 sm:mb-8"
-			>
-				<Button
-					onClick={handleClick}
-					className="px-2 flex flex-row flex-nowrap space-x-2 items-center"
-				>
-					{sortState.label && <span>{sortState.label}</span>}
-					<BiSortAlt2 />
-				</Button>
-			</motion.div>
-		</AnimatePresence>
+		<ul className="flex flex-row flex-nowrap p-1 rounded-lg bg-gray-200 space-x-2 mb-4">
+			{Object.keys(SORT_STATES).map((key) => {
+				const order = SORT_STATES[key];
+				const isActive = key === activeOrder;
+				const handleClick = () => {
+					setActiveOrder(key);
+					onSort(key);
+				};
+
+				return (
+					<li key={key} className={clsx('flex-auto')}>
+						<Button
+							onClick={handleClick}
+							variant="outline"
+							className={clsx(
+								'block p-2 text-sm text-center w-full shadow-none rounded',
+								isActive && 'bg-gray-300'
+							)}
+						>
+							{order.label}
+						</Button>
+					</li>
+				);
+			})}
+		</ul>
 	);
 }
 
@@ -114,7 +111,7 @@ SortButton.propTypes = {
 	onSort: PropTypes.func.isRequired,
 };
 
-function SkillSet({ skills }) {
+export default function SkillSet({ skills }) {
 	const [sortedSkills, setSortedSkills] = useState(skills);
 	const handleSort = useCallback(
 		(order) => {
@@ -140,7 +137,7 @@ function SkillSet({ skills }) {
 				initial="hidden"
 				whileInView="visible"
 				viewport={{ once: true }}
-				className="flex flex-row flex-wrap items-center"
+				className="flex flex-row flex-wrap items-center justify-center md:justify-start"
 				values={sortedSkills}
 				axis="x"
 				onReorder={setSortedSkills}
@@ -194,5 +191,3 @@ SkillSet.propTypes = {
 		})
 	).isRequired,
 };
-
-export default SkillSet;

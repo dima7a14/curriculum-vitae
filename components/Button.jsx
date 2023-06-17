@@ -8,38 +8,42 @@ function getButtonColors(variant) {
 	switch (variant) {
 		case 'primary': {
 			buttonColors =
-				'bg-sky-300 dark:bg-purple-900 hover:bg-sky-200 dark:hover:bg-purple-800';
+				'bg-sky-300 dark:bg-purple-900 hover:bg-sky-200 dark:hover:bg-purple-800 text-gray-800 dark:text-white shadow';
 			break;
 		}
 		case 'secondary': {
 			buttonColors =
-				'bg-emerald-300 dark:bg-cyan-900 hover:bg-emerald-200 dark:hover:bg-cyan-800';
+				'bg-emerald-300 dark:bg-cyan-900 hover:bg-emerald-200 dark:hover:bg-cyan-800 text-gray-800 dark:text-white shadow';
 			break;
 		}
 		case 'success': {
 			buttonColors =
-				'bg-green-300 dark:bg-green-600 hover:bg-green-200 dark:hover:bg-green-500';
+				'bg-green-300 dark:bg-green-600 hover:bg-green-200 dark:hover:bg-green-500 text-gray-800 dark:text-white shadow';
 			break;
 		}
 		case 'warning': {
 			buttonColors =
-				'bg-orange-400 dark:bg-orange-700 hover:bg-orange-300 dark:hover:bg-orange-600';
+				'bg-orange-400 dark:bg-orange-700 hover:bg-orange-300 dark:hover:bg-orange-600 text-gray-800 dark:text-white shadow';
 			break;
 		}
 		case 'danger': {
 			buttonColors =
-				'bg-red-500 dark:bg-red-900 hover:bg-red-400 dark:hover:bg-red-800';
+				'bg-red-500 dark:bg-red-900 hover:bg-red-400 dark:hover:bg-red-800 text-gray-800 dark:text-white shadow';
 			break;
 		}
 		case 'info': {
 			buttonColors =
-				'bg-indigo-400 dark:bg-indigo-900 hover:bg-indigo-300 dark:hover:bg-indigo-800';
+				'bg-indigo-400 dark:bg-indigo-900 hover:bg-indigo-300 dark:hover:bg-indigo-800 text-gray-800 dark:text-white shadow';
+			break;
+		}
+		case 'outline': {
+			buttonColors = '';
 			break;
 		}
 		case 'default':
 		default: {
 			buttonColors =
-				'bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600';
+				'bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 text-gray-800 dark:text-white shadow';
 		}
 	}
 
@@ -50,11 +54,10 @@ const Button = forwardRef(
 	(
 		{
 			children,
-			type,
-			className,
-			variant,
-			onClick,
-			onKeyPress,
+			type = 'button',
+			className = '',
+			variant = 'default',
+			onClick = () => null,
 			href,
 			...other
 		},
@@ -62,7 +65,7 @@ const Button = forwardRef(
 	) => {
 		const buttonColors = getButtonColors(variant);
 		const btnClassName = clsx(
-			'font-semibold text-center text-lg md:text-xl py-2 px-4 shadow rounded-lg transition duration-200 ease text-gray-800 dark:text-white no-underline',
+			'font-semibold text-center text-lg md:text-xl transition duration-200 ease no-underline',
 			buttonColors,
 			className
 		);
@@ -73,7 +76,6 @@ const Button = forwardRef(
 					ref={ref}
 					className={btnClassName}
 					onClick={onClick}
-					onKeyPress={onKeyPress}
 					role="button"
 					tabIndex="0"
 					href={href}
@@ -90,7 +92,6 @@ const Button = forwardRef(
 				type={type}
 				className={btnClassName}
 				onClick={onClick}
-				onKeyPress={onKeyPress}
 				{...other}
 			>
 				{children}
@@ -113,17 +114,10 @@ Button.propTypes = {
 		'danger',
 		'info',
 		'default',
+		'outline',
 	]),
 	onClick: PropTypes.func,
-	onKeyPress: PropTypes.func,
 	href: PropTypes.string,
-};
-
-Button.defaultProps = {
-	type: 'button',
-	className: '',
-	variant: 'default',
-	onClick: () => null,
 };
 
 export default Button;

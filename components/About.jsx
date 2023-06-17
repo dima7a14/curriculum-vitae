@@ -40,7 +40,7 @@ export default function About() {
 					</div>
 				</div>
 			</div>
-			<div className="mt-2 md:mt-4">
+			<div className="mt-y">
 				<div className="px-2 md:px-4">
 					<Heading text="Links" />
 				</div>
