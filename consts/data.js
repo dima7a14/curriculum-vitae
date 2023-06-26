@@ -4,12 +4,12 @@ export const experience = [
 	{
 		company: 'Xenoss',
 		companyLink: 'https://xenoss.io/',
-		duration: 'October 2021',
-		role: 'Senior Front-End Developer',
+		duration: 'October 2021 - current',
 		projects: [
 			{
 				name: 'Venatus',
 				link: 'https:/venatus.com/',
+				role: 'Senior Front-End Engineer',
 				description:
 					'Venatus is a global ad-tech platform in gaming and entertainment helping brands reach the most engaged audiences across all devices.',
 				responsibilities: [
@@ -41,11 +41,11 @@ export const experience = [
 		company: 'SDH',
 		companyLink: 'https://sdh.com.ua/',
 		duration: 'November 2020 - October 2021',
-		role: 'Front-End Developer',
 		projects: [
 			{
 				name: 'FieldHub',
 				link: 'https://www.fieldhub.com/',
+				role: 'Front-End Engineer',
 				description:
 					'FieldHub is a modern and feature-rich platform for businesses with field services, recurring revenue, and inventory management.',
 				responsibilities: [
@@ -79,12 +79,12 @@ export const experience = [
 		company: 'Devlion',
 		companyLink: 'https://devlion.co/',
 		duration: 'February 2015 - November 2020',
-		role: 'Front-End Developer',
 		projects: [
 			{
 				name: 'Chat plugin (MVP)',
+				role: 'Full-Stack Engineer',
 				description:
-					'It was an audio chat for Ed CMD Moodle. The main idea was to implement chat as a javascript plugin where everyone who was on the same page would be able to communicate with a teacher.',
+					'An audio chat for CMD Moodle. The main idea is to give the ability to communicate teacher with students on the same page via WebRTC technology.',
 				responsibilities: [
 					'creating a chat-plugin in React with different roles for users;',
 					'creating a simple back-end in Node.js to handle and store all communication between users via Socket.io.',
@@ -105,7 +105,8 @@ export const experience = [
 				],
 			},
 			{
-				name: 'Educational sites based on CMS Moodle',
+				name: 'H5P widgets for CMS Moodle',
+				role: 'Front-End Developer',
 				responsibilities: [
 					'creating H5P content types for educational modules;',
 					'fixing issues in Moodle CMS',
@@ -123,6 +124,7 @@ export const experience = [
 			{
 				name: 'Subivi',
 				link: 'https://subivi.com/',
+				role: 'Front-End Engineer',
 				description:
 					'Subivi is a simple eBay CRM. It has full eBay support and helps to save time while using eBay.',
 				responsibilities: [
@@ -151,6 +153,7 @@ export const experience = [
 			},
 			{
 				name: 'Accessibility Plugin',
+				role: 'Front-End Developer',
 				description:
 					'React plugin for enabling different features on the site for better accessibility.',
 				responsibilities: ['implementing plugin'],
@@ -159,6 +162,7 @@ export const experience = [
 			{
 				name: 'SwiPay',
 				link: 'https://payment-pay.co.il/',
+				role: 'Mobile Developer',
 				description: 'React-native prototype app for SwiPay.',
 				responsibilities: [
 					'adding different new screens with a lot of fields or charts;',
@@ -168,6 +172,7 @@ export const experience = [
 			},
 			{
 				name: 'Supporting existed projects',
+				role: 'Front-End Developer',
 				responsibilities: [
 					'fixing style & js issues;',
 					'implementing new changes.',
@@ -183,6 +188,7 @@ export const experience = [
 		role: 'Front-End Developer',
 		projects: [
 			{
+				role: 'Front-End Developer',
 				description:
 					'Poshare is a fashion platform where women can rent or buy designer clothing and accessories at amazing prices.',
 				responsibilities: [
@@ -199,6 +205,7 @@ export const experience = [
 		role: 'Front-End Developer',
 		projects: [
 			{
+				role: 'Front-End Developer',
 				responsibilities: [
 					'creating different Landing pages & HTML templates;',
 					'fixing style & js issues on existing sites',

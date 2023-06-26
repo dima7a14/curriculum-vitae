@@ -59,6 +59,7 @@ const Button = forwardRef(
 			variant = 'default',
 			onClick = () => null,
 			href,
+			disabled = false,
 			...other
 		},
 		ref
@@ -67,6 +68,7 @@ const Button = forwardRef(
 		const btnClassName = clsx(
 			'font-semibold text-center text-lg md:text-xl transition duration-200 ease no-underline',
 			buttonColors,
+			disabled && 'opacity-50 cursor-not-allowed',
 			className
 		);
 
@@ -92,6 +94,7 @@ const Button = forwardRef(
 				type={type}
 				className={btnClassName}
 				onClick={onClick}
+				disabled={disabled}
 				{...other}
 			>
 				{children}
@@ -118,6 +121,7 @@ Button.propTypes = {
 	]),
 	onClick: PropTypes.func,
 	href: PropTypes.string,
+	disabled: PropTypes.bool,
 };
 
 export default Button;

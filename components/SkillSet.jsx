@@ -75,7 +75,7 @@ const SORT_STATES = {
 	},
 };
 
-function SortButton({ onSort }) {
+function SortPanel({ onSort }) {
 	const [activeOrder, setActiveOrder] = useState('known');
 
 	return (
@@ -107,7 +107,7 @@ function SortButton({ onSort }) {
 	);
 }
 
-SortButton.propTypes = {
+SortPanel.propTypes = {
 	onSort: PropTypes.func.isRequired,
 };
 
@@ -131,7 +131,7 @@ export default function SkillSet({ skills }) {
 
 	return (
 		<>
-			<SortButton onSort={handleSort} />
+			<SortPanel onSort={handleSort} />
 			<Reorder.Group
 				variants={techAnimation}
 				initial="hidden"
