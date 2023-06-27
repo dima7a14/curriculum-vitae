@@ -124,7 +124,7 @@ function ThemeSwitcher() {
 				as={Button}
 				className={clsx(
 					'p-2 rounded-lg',
-					manuallySelected && 'text-sky-700 dark:text-purple-400'
+					manuallySelected && 'text-sky-700 dark:text-purple-300'
 				)}
 			>
 				{colorScheme === 'light' && <FaSun className="w-6 h-6" />}

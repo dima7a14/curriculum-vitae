@@ -107,9 +107,11 @@ export const experience = [
 			{
 				name: 'H5P widgets for CMS Moodle',
 				role: 'Front-End Developer',
+				description:
+					'Creating H5P widgets with interactive content for CMD Moodle.',
 				responsibilities: [
 					'creating H5P content types for educational modules;',
-					'fixing issues in Moodle CMS',
+					'fixing issues in Moodle CMS.',
 				],
 				technologies: [
 					'html',
@@ -161,11 +163,12 @@ export const experience = [
 			},
 			{
 				name: 'SwiPay',
-				link: 'https://payment-pay.co.il/',
+				link: 'https://devlion.co/portfolio/swipay/',
 				role: 'Mobile Developer',
-				description: 'React-native prototype app for SwiPay.',
+				description:
+					'Social financing platform that connects individual lenders and borrowers, so-called peer-to-peer lending world.',
 				responsibilities: [
-					'adding different new screens with a lot of fields or charts;',
+					'adding different screens with complex logic;',
 					'fixing bugs in existing forms.',
 				],
 				technologies: ['js', 'react', 'reactNative'],
@@ -173,6 +176,7 @@ export const experience = [
 			{
 				name: 'Supporting existed projects',
 				role: 'Front-End Developer',
+				description: 'Supporting existed sites and web applications.',
 				responsibilities: [
 					'fixing style & js issues;',
 					'implementing new changes.',
@@ -188,6 +192,8 @@ export const experience = [
 		role: 'Front-End Developer',
 		projects: [
 			{
+				name: 'poshare.com',
+				link: 'https://poshare.com/',
 				role: 'Front-End Developer',
 				description:
 					'Poshare is a fashion platform where women can rent or buy designer clothing and accessories at amazing prices.',
@@ -205,9 +211,10 @@ export const experience = [
 		role: 'Front-End Developer',
 		projects: [
 			{
+				name: 'Different projects',
 				role: 'Front-End Developer',
 				responsibilities: [
-					'creating different Landing pages & HTML templates;',
+					'creating websites, landing pages, and HTML templates;',
 					'fixing style & js issues on existing sites',
 				],
 				technologies: ['html', 'css', 'sass', 'js', 'jquery', 'php'],

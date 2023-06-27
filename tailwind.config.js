@@ -5,6 +5,7 @@ module.exports = {
 		fontFamily: {
 			sans: ['Source Sans Pro', 'sans-serif'],
 			cursive: ['Bungee Shade', 'cursive'],
+			'cursive-2': ['Concert One', 'cursive'],
 		},
 		extend: {
 			keyframes: {

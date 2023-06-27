@@ -22,13 +22,8 @@ export default function About() {
 					))}
 				</div>
 				<div className="flex-auto flex-shrink-0 ml-0 md:ml-8 flex flex-col items-center md:items-end md:p-4 mb-4 md:mb-0">
-					<div className="w-48 h-48 mb-2 md:mb-4 border-4 border-white dark:border-purple-400 shadow-lg shadow-slate-700/10 ring-1 ring-gray-900/5 rounded-full overflow-hidden">
-						<Image
-							src={profilePic}
-							alt={about.title}
-							width={192}
-							height={192}
-						/>
+					<div className="w-48 h-48 mb-2 md:mb-4 border-4 border-white dark:border-purple-400 shadow-lg shadow-slate-700/10 ring-1 ring-gray-900/5 rounded-full overflow-hidden relative">
+						<Image src={profilePic} alt={about.title} fill />
 					</div>
 					<div className="text-center md:text-right">
 						<h3 className="text-2xl md:text-4xl font-light">

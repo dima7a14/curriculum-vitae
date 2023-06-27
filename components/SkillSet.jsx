@@ -79,7 +79,7 @@ function SortPanel({ onSort }) {
 	const [activeOrder, setActiveOrder] = useState('known');
 
 	return (
-		<ul className="flex flex-row flex-nowrap p-1 rounded-lg bg-gray-200 space-x-2 mb-4">
+		<ul className="flex flex-row flex-nowrap p-1 rounded-lg bg-gray-200 dark:bg-gray-700 dark:text-white space-x-2 mb-4">
 			{Object.keys(SORT_STATES).map((key) => {
 				const order = SORT_STATES[key];
 				const isActive = key === activeOrder;
@@ -95,7 +95,7 @@ function SortPanel({ onSort }) {
 							variant="outline"
 							className={clsx(
 								'block p-2 text-sm text-center w-full shadow-none rounded',
-								isActive && 'bg-gray-300'
+								isActive && 'bg-gray-300 dark:bg-gray-800'
 							)}
 						>
 							{order.label}

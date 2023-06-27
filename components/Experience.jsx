@@ -15,7 +15,7 @@ import Technology from './Technology';
 function ProjectLine({ title, children, className = '' }) {
 	return (
 		<div className="">
-			<div className="text-sky-700 dark:text-purple-400 font-cursive text-lg">
+			<div className="text-sky-700 dark:text-purple-300 font-cursive-2 text-lg mb-2">
 				{title}
 			</div>
 			<div className={clsx('text-center', className)}>{children}</div>
@@ -36,26 +36,26 @@ export default function Experience() {
 	return (
 		<section className="mt-2 md:mt-4 px-2 md:px-4">
 			<Heading text="Experience" />
-			<div className="flex flex-row flex-nowrap justify-between items-stretch p-1 rounded-lg bg-gray-200 space-x-1 relative">
+			<div className="flex flex-row flex-nowrap justify-between items-stretch p-1 rounded-lg bg-gray-200 dark:bg-gray-700 dark:text-white space-x-1 relative">
 				<Button
 					variant="outline"
-					className="px-2 text-xl border-r-2 border-gray-300 text-gray-600"
+					className="px-2 text-xl border-r-2 border-gray-300 dark:border-gray-500 text-gray-600 dark:text-gray-500"
 					disabled={companyIndex === 0}
 					onClick={() => setCompanyIndex(companyIndex - 1)}
 				>
 					<HiArrowNarrowLeft />
 				</Button>
 				<div className="flex-auto text-center">
-					<h2 className="text-2xl font-light">
+					<h2 className="text-2xl font-cursive-2 -mt-2">
 						{currentCompany.company}
 					</h2>
-					<h6 className="text-xs font-semibold text-gray-600">
+					<h6 className="text-xs font-semibold text-gray-600 dark:text-gray-300">
 						{currentCompany.duration}
 					</h6>
 				</div>
 				<Button
 					variant="outline"
-					className="px-2 text-xl border-l-2 border-gray-300 text-gray-600"
+					className="px-2 text-xl border-l-2 border-gray-300 dark:border-gray-500 text-gray-600 dark:text-gray-500"
 					disabled={companyIndex === experience.length - 1}
 					onClick={() => setCompanyIndex(companyIndex + 1)}
 				>
@@ -63,9 +63,11 @@ export default function Experience() {
 				</Button>
 			</div>
 			<div>
-				<h5 className="text-lg font-semibold text-center">Projects</h5>
 				{currentCompany.projects.map((project) => (
-					<div key={project.name}>
+					<div
+						key={project.name}
+						className="pb-2 mb-2 last:mb-0 border-b-gray-600 dark:border-b-gray-500 border-b-2 last:border-b-0"
+					>
 						<ProjectLine
 							title="Name"
 							className="text-2xl font-light"
@@ -75,7 +77,7 @@ export default function Experience() {
 									href={project.link}
 									target="_blank"
 									rel="noreferrer"
-									className="inline-block align-middle text-sky-600 hover:text-sky-700"
+									className="inline-block align-middle text-sky-600 hover:text-sky-700 dark:text-purple-300 dark:hover:text-purple-400"
 								>
 									<span className="mr-2">{project.name}</span>
 									<FaExternalLinkAlt className="inline-block text-sm md:text-lg" />
@@ -87,12 +89,14 @@ export default function Experience() {
 						<ProjectLine title="Role" className="italic">
 							{project.role}
 						</ProjectLine>
-						<ProjectLine
-							title="About"
-							className="text-sm text-justify leading-5"
-						>
-							{project.description}
-						</ProjectLine>
+						{project.description && (
+							<ProjectLine
+								title="About"
+								className="text-sm text-justify leading-5 px-4"
+							>
+								{project.description}
+							</ProjectLine>
+						)}
 						<ProjectLine
 							title="Technologies"
 							className="flex flex-row flex-wrap justify-center items-center"
@@ -108,9 +112,11 @@ export default function Experience() {
 							))}
 						</ProjectLine>
 						<ProjectLine title="Responsibilities">
-							<ul>
+							<ul className="text-left list-disc list-inside text-sm leading-5 px-4">
 								{project.responsibilities.map((resp) => (
-									<li key={resp}>{resp}</li>
+									<li key={resp} className="my-2">
+										{resp}
+									</li>
 								))}
 							</ul>
 						</ProjectLine>
