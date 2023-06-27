@@ -13,7 +13,7 @@
     "autoprefixer": "^10.4.7",
     "clsx": "^1.1.1",
     "dayjs": "^1.11.3",
-    "eslint-config-next": "^13.3.4",
+    "eslint-config-next": "^12.0.4",
     "framer-motion": "^6.5.1",
     "next": "^13.3.4",
     "postcss": "^8.4.14",
@@ -26,12 +26,12 @@
   },
   "devDependencies": {
     "eslint": "^8.16.0",
-    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-airbnb-base": "^14.2.1",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-prettier": "^4.0.0",
-    "eslint-plugin-react": "latest",
+    "eslint-plugin-react": "^7.25.3",
     "prettier": "^2.6.2"
   }
 }
