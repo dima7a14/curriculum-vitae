@@ -5,7 +5,7 @@ import clsx from 'clsx';
 const Chip = React.forwardRef(({ children, className = '' }, ref) => (
 	<span
 		className={clsx(
-			'px-2 py-1 rounded-full font-semibold text-xs align-center transition duration-200 ease cursor-default uppercase',
+			'px-2 md:px-4 py-1 rounded-full font-semibold text-xs align-center transition duration-200 ease cursor-default uppercase',
 			className
 		)}
 		ref={ref}

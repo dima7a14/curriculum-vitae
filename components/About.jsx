@@ -10,12 +10,12 @@ export default function About() {
 			<div className="pt-2 md:pt-4">
 				<Heading text="About" />
 			</div>
-			<div className="flex flex-col-reverse md:flex-row justify-between align-top p-2">
+			<div className="flex flex-col-reverse md:flex-row justify-between align-top p-2 md:p-4">
 				<div className="flex-initial">
 					{about.bio.map((paragraph, index) => (
 						<p
 							key={index}
-							className="mb-2 md:mb-4 last:mb-0 text-lg md:text-3xl font-light"
+							className="mb-2 md:mb-4 last:mb-0 text-lg md:text-2xl lg:text-3xl font-light"
 						>
 							{paragraph}
 						</p>

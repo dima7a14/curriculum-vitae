@@ -137,7 +137,7 @@ export default function SkillSet({ skills }) {
 				initial="hidden"
 				whileInView="visible"
 				viewport={{ once: true }}
-				className="flex flex-row flex-wrap items-center justify-center md:justify-start"
+				className="flex flex-row flex-wrap items-center justify-center lg:justify-start"
 				values={sortedSkills}
 				axis="x"
 				onReorder={setSortedSkills}
@@ -155,7 +155,7 @@ export default function SkillSet({ skills }) {
 							name={value.name}
 							Icon={value.Icon}
 							level={value.level}
-							className="mb-2 mr-2"
+							className="mb-2 md:mb-4 mr-2 md:mr-4"
 						/>
 					</Reorder.Item>
 				))}

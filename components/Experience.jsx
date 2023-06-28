@@ -35,7 +35,7 @@ export default function Experience() {
 			<div className="flex flex-row flex-nowrap justify-between items-stretch p-1 rounded-lg bg-gray-200 dark:bg-gray-700 dark:text-white space-x-1 relative">
 				<Button
 					variant="outline"
-					className="px-2 text-xl border-r-2 border-gray-300 dark:border-gray-500 text-gray-600 dark:text-gray-500"
+					className="px-2 text-xl md:text-2xl border-r-2 border-gray-300 dark:border-gray-500 text-gray-600 dark:text-gray-500"
 					disabled={companyIndex === 0}
 					onClick={() => setCompanyIndex(companyIndex - 1)}
 				>
@@ -50,17 +50,17 @@ export default function Experience() {
 						transition={{ duration: 0.2 }}
 						className="flex-auto text-center"
 					>
-						<h2 className="text-2xl font-cursive-2 -mt-2">
+						<h2 className="text-2xl md:text-4xl font-cursive-2 -mt-2">
 							{currentCompany.company}
 						</h2>
-						<h6 className="text-xs font-semibold text-gray-600 dark:text-gray-300">
+						<h6 className="text-xs md:text-lg font-semibold text-gray-600 dark:text-gray-300">
 							{currentCompany.duration}
 						</h6>
 					</motion.div>
 				</AnimatePresence>
 				<Button
 					variant="outline"
-					className="px-2 text-xl border-l-2 border-gray-300 dark:border-gray-500 text-gray-600 dark:text-gray-500"
+					className="px-2 text-xl md:text-2xl border-l-2 border-gray-300 dark:border-gray-500 text-gray-600 dark:text-gray-500"
 					disabled={companyIndex === experience.length - 1}
 					onClick={() => setCompanyIndex(companyIndex + 1)}
 				>
@@ -83,7 +83,7 @@ export default function Experience() {
 						>
 							<ProjectLine
 								title="Name"
-								className="text-2xl font-light"
+								className="text-2xl md:text-4xl font-light"
 							>
 								{project.link ? (
 									<a
@@ -101,20 +101,23 @@ export default function Experience() {
 									project.name
 								)}
 							</ProjectLine>
-							<ProjectLine title="Role" className="italic">
+							<ProjectLine
+								title="Role"
+								className="italic md:text-2xl"
+							>
 								{project.role}
 							</ProjectLine>
 							{project.description && (
 								<ProjectLine
 									title="About"
-									className="text-sm text-justify leading-5 px-4"
+									className="text-sm md:text-xl text-justify leading-5 px-4 md:px-0"
 								>
 									{project.description}
 								</ProjectLine>
 							)}
 							<ProjectLine
 								title="Technologies"
-								className="flex flex-row flex-wrap justify-center items-center"
+								className="flex flex-row flex-wrap justify-center items-center md:justify-start"
 							>
 								{project.technologies.map((tech) => (
 									<div key={tech} className="m-1">
@@ -127,7 +130,7 @@ export default function Experience() {
 								))}
 							</ProjectLine>
 							<ProjectLine title="Responsibilities">
-								<ul className="text-left list-disc list-inside text-sm leading-5 px-4">
+								<ul className="text-left list-disc list-inside text-sm md:text-lg leading-5 px-4 md:px-0">
 									{project.responsibilities.map((resp) => (
 										<li key={resp} className="my-2">
 											{resp}

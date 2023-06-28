@@ -52,7 +52,7 @@ const Technology = React.forwardRef(
 		return (
 			<Chip
 				className={clsx(
-					'text-white dark:text-white flex flex-row flex-nowrap space-x-2 items-center',
+					'text-white dark:text-white flex flex-row flex-nowrap space-x-2 items-center text-lg md:text-lg',
 					colors.bg,
 					colors.border,
 					className
@@ -60,7 +60,12 @@ const Technology = React.forwardRef(
 				ref={ref}
 			>
 				{Icon && (
-					<Icon className={clsx('text-lg rounded', iconClassName)} />
+					<Icon
+						className={clsx(
+							'text-xl md:text-xl rounded',
+							iconClassName
+						)}
+					/>
 				)}
 				<span>{name}</span>
 			</Chip>
